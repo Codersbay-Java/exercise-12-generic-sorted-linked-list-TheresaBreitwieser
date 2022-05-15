@@ -99,9 +99,9 @@ Comparable<String> comp = node;
 ~~~java
 public class switchElementPosition {
     public static <T> void switchPosition(T[] array, int x, int y) {
-        T temporary = a[x];
-        a[x] = a[y];
-        a[y] = temporary;
+        T temporary = array[x];
+        array[x] = array[y];
+        array[y] = temporary;
     }
 }
 
