@@ -1,6 +1,5 @@
 package model;
 
-import java.util.Objects;
 
 public class Animal implements Comparable<Animal> {
    private String name;
