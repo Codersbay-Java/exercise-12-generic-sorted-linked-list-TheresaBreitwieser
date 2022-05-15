@@ -12,37 +12,20 @@ public class SortedLinkedList<S extends Comparable<S>> implements SortedList<S> 
 			head=newNode;
 		} else {
 			Node<S> current = head;
-			Node<S> next = current.getNext();
-			boolean valueSet=false;
+			Node<S> next = head;
 
-			if(head.getValue().compareTo(element) > 0){
-				head = newNode;
-				newNode.setNext(current);
-				valueSet = true;
+			while(next !=null && next.getValue().compareTo(element) <= 0){
+				current = next;
+				next = next.getNext();
 			}
 
-			while(!valueSet){
-
-				if(next==null) {
-					if(current.getValue().compareTo(element) <0){
-						current.setNext(newNode);
-					}
-					else {
-						head= newNode;
-						newNode.setNext(current);
-					}
-					valueSet=true;
-				}
-				else if(current.getValue().compareTo(element) <=0 && next.getValue().compareTo(element)>=0){
-					newNode.setNext(next);
+			if(next == head) {
+				newNode.setNext(next);
+				head = newNode;
+			}
+			else {
 					current.setNext(newNode);
-					valueSet=true;
-				}
-				if(!valueSet){
-					current=current.getNext();
-					next=current.getNext();
-				}
-
+					newNode.setNext(next);
 				}
 			}
 		size++;
