@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Person implements Comparable<Person>{
     private int age;
 
@@ -24,4 +26,14 @@ public class Person implements Comparable<Person>{
     public int compareTo(Person p) {
         return Integer.compare(this.age, p.age);
     }
+
+
+    public boolean equals(Person p) {
+        return age == p.age;
+    }
+
+
 }
+
+
+

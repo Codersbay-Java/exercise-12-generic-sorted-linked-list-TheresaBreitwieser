@@ -16,6 +16,8 @@ public class Main {
         listPerson.insert(new Person(7));
         listPerson.insert(new Person(15));
         listPerson.insert(new Person(7));
+        System.out.println(listPerson.get(1).equals(listPerson.get(2)));
+        System.out.println(listPerson.get(0).equals(listPerson.get(1)));
         listPerson.insert(new Person(16));
         listPerson.insert(new Person(67));
         System.out.println(listPerson);
