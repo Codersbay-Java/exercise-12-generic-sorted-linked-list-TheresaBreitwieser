@@ -29,4 +29,14 @@ public class Animal implements Comparable<Animal> {
 
     }
 
+
+    public boolean equals(Animal a) {
+        for(int i=0; i<a.name.length(); i++){
+           if(this.name.charAt(i) != a.name.charAt(i)) {
+               return false;
+           }
+        }
+        return true;
+    }
+
 }

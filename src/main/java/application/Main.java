@@ -36,6 +36,10 @@ public class Main {
         System.out.println(listAnimal.size());
         listAnimal.delete(1);
         System.out.println(listAnimal);
+        listAnimal.insert(new Animal("Snake"));
+        System.out.println(listAnimal);
+        System.out.println(listAnimal.get(2).equals(listAnimal.get(3)));
+        System.out.println(listAnimal.get(1).equals(listAnimal.get(3)));
         System.out.println(listAnimal.size());
         System.out.println(listAnimal.get(0));
 
@@ -47,7 +51,11 @@ public class Main {
         System.out.println(listBook);
         System.out.println(listBook.size());
         //listBook.delete(4);
-        listBook.delete(3);
+        listBook.delete(2);
+        listBook.insert(new Book('z', "Zebras"));
+        System.out.println(listBook);
+        System.out.println(listBook.get(2).equals(listBook.get(3)));
+        System.out.println(listBook.get(0).equals(listBook.get(3)));
         System.out.println(listBook);
         System.out.println(listBook.size());
         System.out.println(listBook.get(1));

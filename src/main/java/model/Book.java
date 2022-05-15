@@ -35,4 +35,9 @@ public class Book implements Comparable<Book>{
     public int compareTo(Book b) {
        return Character.compare(this.bookIndex, b.bookIndex);
     }
+
+
+    public boolean equals(Book b) {
+        return this.bookIndex == b.bookIndex;
+    }
 }
