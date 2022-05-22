@@ -31,11 +31,33 @@ totally fine.
 ## Questions
 * How can you change the ordering of the list? From ascending 
 to descending. Name at least two different methods.
+
+
+--> Invert return type(-) of .compareTo method or implement 
+a new method to make a copy of the list and copy in values from asc to desc.
+
+
 * Can the inner Node class be static? Justify your answer.
+
+--> Yes but if you want to create a new Node, you first need to create
+an instance of outer class. An outer class can not be static.
+
+
 * Can you name the generic placeholder `Placeholder` instead of
 `T`? If yes should you, do it?
+
+--> In theory yes, but it is not "common practice" and should not be done. 
+
 * Which benefits does this data structure have?
+--> A Sorted linked list is a dynamic data structure and does not have
+a fixed size like an array. In addition, the use of generics enables 
+us to use this data structure with different data types.
+
 * Which drawbacks does it have? Name a use case.
+--> More memory is required in case of linked list compared to an array.
+In addition accessing a node in a linkedlist is more time consuming because
+you need to traverse the list from head on. An Array is index based, which means faster.
+
 * Will the following class compile? If not, why?
 
 ~~~java
@@ -44,9 +66,17 @@ public final class Algorithm {
         return x > y ? x : y;
     }
 }
+
 ~~~
+-->The code will not compile because the "greater than >" operator is only applicable for primitive number data types (like int, float, double which belong to superclass Numbers..).
 
 * If the compiler erases all type parameters at compile time, why should you use generics?
+-->Elimination of Casts
+-->Stronger type checks at compile time. 
+Otherwise you would always have to include instanceOf checks and casts and risk runtime errors which you would always like to avoid.
+
+
+
 * Consider this class:
 
 ~~~java
@@ -63,8 +93,19 @@ Node<String> node = new Node<>();
 Comparable<String> comp = node;
 ~~~
 
-* Write a generic method to exchange the positions of two different elements in an array
+-->Yes, compilation is possible
 
+* Write a generic method to exchange the positions of two different elements in an array
+~~~java
+public class switchElementPosition {
+    public static <T> void switchPosition(T[] array, int x, int y) {
+        T temporary = array[x];
+        array[x] = array[y];
+        array[y] = temporary;
+    }
+}
+
+~~~
 ---
 > **NOTES:**
 Write readable and good code. Do not repeate yourself use final,
